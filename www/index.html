@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dapur Ceu Tari Apps</title>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=0"/>
+    <link href="assets/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+    <link href="assets/theme.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
+    <style>
+        #sidebar{display:none;z-index:5;top:0px}
+        .sidebar-width{width:230px}
+        .nav-btn{width:50px;height:43px}
+        #navbar2{color:#dfdfdf!important}
+        #nav-sign{height:3px;position:relative;top:-0.5px}
+        #content-home{position:relative;width:300%;margin-top:107px;padding-bottom:100px}
+        .content-off{visibility:hidden;max-height:1px;overflow-y:hidden}
+        #sub-content-app{display:none;height:100%;width:100%;background-color:#fff;position:fixed!important;z-index:10;overflow:auto;top:0;left:0}
+        .content-of-sub{margin-top:46px}
+        
+        /* sub-content-animator-1 */
+        .move-out{position:relative;animation:moveout 0.4s}@keyframes moveout{from{left:0} to{left:-90px}}
+        .sub-move-in{animation:sub-animate 0.4s}@keyframes sub-animate{from{left:220px} to{left:0}}
+        .move-in{position:relative;animation:movein 0.4s}@keyframes movein{from{left:-90px} to{left:0}}
+        .sub-move-out{animation:sub-animate-out 0.4s}@keyframes sub-animate-out{from{left:0} to{left:100%}}
+        
+        /* sub-content-animator-2 */
+        .sub-bottom{position:relative;animation:subbottom 0.2s}@keyframes subbottom{from{top:120px;opacity:0} to{top:0;opacity:1}}
+        .sub-bottom-off{position:relative;animation:subbottomoff 0.2s}@keyframes subbottomoff{from{top:0;opacity:1} to{top:120px;opacity:0}}
+        
+        /* flash-message */
+        #flash-message{display:none;padding-top:110px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto}
+        #flash-message .flash-content{margin:auto;background-color:#ccc;position:relative;padding:0;outline:0;width:200px}
+        
+        /* dropdown-click-float */
+        .dropdown-click{cursor:auto}
+        .overlay-float-menu{position:fixed;display:none;width:100%;height:100%;top:0;left:0;z-index:2}
+        .dropdown-content{z-index:3}
+    </style>
+</head>
+<body class="white">
+    <div id="content-app">
+        <div class="center">
+            <div class="section card padding-large" style="width:250px;margin:auto">
+                <div class="section"><img src="assets/logo.png" style="width:197px"></div>
+                <div class="section"><i class="la la-circle-o-notch la-spin text-theme-d3" style="font-size:25px"></i></div>
+                <div class="text-theme xlarge">Dapur Ceu Tari</div> 
+                <div class="margin-bottom text-theme">www.dapurceutari.com</div> 
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+function play(){
+    window.setTimeout(function(){
+        if(script["apps"]){
+            if(hasLogin())
+                set_home();
+            else
+                set_login();
+        }else
+            play();
+    }, 170);
+}
+</script>
+<script src="assets/jquery-1.9.1.min.js"></script>
+<script src="assets/system-online.js?s"></script>
+</html>
